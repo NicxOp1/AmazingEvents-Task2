@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Amazing Events</title>
+  <link rel="stylesheet" href="./assets/style.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="./assets/img/Logo-Amazing-Events.ico">
+</head>
+
+<body>
+  <header>
+    <ul class="nav justify-content-end bg-warning gap-3  px-5" id="UlNav">
+      <li class="nav-item me-auto mt-1">
+        <a class="nav-link" aria-current="page" href="#"><img src="./assets/img/Logo-Amazing-Events.png"
+            style="height: 50px; width: 200px;" alt="Logo"></a>
+      </li>
+      <li class="nav-item border border-dark d-flex aling-items-center p-1 my-3 bg-warning shadow rounded">
+        <a class="nav-link text-danger" href="./index.html">Home</a>
+      </li>
+      <li class="nav-item border border-dark d-flex aling-items-center p-1 my-3 bg-warning shadow rounded">
+        <a class="nav-link text-danger" href="#">Upcoming Events</a>
+      </li>
+      <li class="nav-item border border-dark d-flex aling-items-center p-1 my-3 bg-warning shadow rounded">
+        <a class="nav-link text-danger" href="./past-events.html">Past Events</a>
+      </li>
+      <li class="nav-item border border-dark d-flex aling-items-center p-1 my-3 bg-warning shadow rounded">
+        <a class="nav-link text-danger" href="./contact.html">Contact</a>
+      </li>
+      <li class="nav-item border border-dark d-flex aling-items-center p-1 my-3 bg-warning shadow rounded">
+        <a class="nav-link text-danger" href="./stats.html">Stats</a>
+      </li>
+      <li class="nav-item border border-dark d-flex aling-items-center p-1 my-3 bg-warning shadow rounded">
+        <a class="nav-link text-danger" href="./details.html">Details</a>
+      </li>
+    </ul>
+
+
+    <nav class="navbar bg-warning fixed-top" id="MobileNav">
+      <div class="container-fluid">
+        <a class="navbar-brand px-2" href="#"><img src="./assets/img/Logo-Amazing-Events.png"
+            style="height: 50px; width: 200px;" alt="Logo"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header bg-danger bg-opacity-75">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Amazing Events</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body bg-opacity-50 bg-warning">
+            <ul class="navbar-nav flex-grow-1 pe-4">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Upcoming Events</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./past-events.html">Past Events</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./stats.html">Stats</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./details.html">Details</a>
+              </li>
+            </ul>
+            <div class="d-flex flex-wrap h-25 px-2 gap-3">
+              <div class="d-flex">
+                <input class="form-check-input p-2 " type="checkbox" value="" id="firstCheckbox">
+                <label class="form-check-label" for="firstCheckbox">First checkbox</label>
+              </div>
+              <div class="d-flex">
+                <input class="form-check-input p-2 " type="checkbox" value="" id="firstCheckbox">
+                <label class="form-check-label" for="firstCheckbox">First checkbox</label>
+              </div>
+              <div class="d-flex">
+                <input class="form-check-input p-2 " type="checkbox" value="" id="firstCheckbox">
+                <label class="form-check-label" for="firstCheckbox">First checkbox</label>
+              </div>
+              <div class="d-flex">
+                <input class="form-check-input p-2 " type="checkbox" value="" id="firstCheckbox">
+                <label class="form-check-label" for="firstCheckbox">First checkbox</label>
+              </div>
+              <div class="d-flex">
+                <input class="form-check-input p-2 " type="checkbox" value="" id="firstCheckbox">
+                <label class="form-check-label" for="firstCheckbox">First checkbox</label>
+              </div>
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="full-container-fluid">
+    <div id="CardContainer">
+
+
+      <!-- <div class="card" style="width: 17rem; height: auto;">
+        <div class="inner">
+          <img src="./assets/img/Food_Fair.jpg" class="card-img-top" alt="...">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Festival of the collectivities</h5>
+          <p class="card-text">Enjoy your favorite dishes from different countries in a unique event for the whole
+            family.</p>
+          <p><span>Price</span> $5</p>
+          <a href="#" class="btn btn-primary">Buy</a>
+        </div>
+      </div>
+      <div class="card" style="width: 17rem; height: auto;">
+        <div class="inner">
+          <img src="./assets/img/outing_to_the_museum.jpg" class="card-img-top" alt="...">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Jurassic Park</h5>
+          <p class="card-text">Let's go to the paleontology museum for an incredible tour to learn about the largest dinosaurs.</p>
+          <p><span>Price</span> $15 </p>
+          <a href="#" class="btn btn-primary">Buy</a>
+        </div>
+      </div>
+      <div class="card" style="width: 17rem; height: auto; ">
+        <div class="inner">
+          <img src="./assets/img/costume_party.jpg" class="card-img-top" alt="...">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Halloween Night</h5>
+          <p class="card-text">Come in your scariest costume character to win amazing prizes.</p>
+          <p><span>Price</span> $12</p>
+          <a href="#" class="btn btn-primary">Buy</a>
+        </div>
+      </div>
+      <div class="card" style="width: 17rem; height: auto;">
+        <div class="inner">
+          <img src="./assets/img/music_concert.jpg" class="card-img-top" alt="...">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Metallica in concert</h5>
+          <p class="card-text">The only concert of the most emblematic band in the world</p>
+          <p><span>Price</span> $150 </p>
+          <a href="#" class="btn btn-primary">Buy</a>
+        </div>
+      </div>
+      <div class="card" style="width: 17rem; height: auto;">
+        <div class="inner">
+          <img src="./assets/img/marathon.jpg" class="card-img-top" alt="...">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">10K for life</h5>
+          <p class="card-text">Come and exercise, improve your health and lifestyle.</p>
+          <p><span>Price</span> $3</p>
+          <a href="#" class="btn btn-primary">Buy</a>
+        </div>
+      </div>
+      <div class="card" style="width: 17rem; height: auto;">
+        <div class="inner">
+          <img src="./assets/img/books.jpg" class="card-img-top" alt="...">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">School Book Fair</h5>
+          <p class="card-text">Bring your unused school book and bring the one you need.</p>
+          <p><span>Price</span> $1</p>
+          <a href="#" class="btn btn-primary">Buy</a>
+        </div>
+      </div>
+      <div class="card" style="width: 17rem; height: auto;">
+        <div class="inner">
+          <img src="./assets/img/cinema.jpg" class="card-img-top" alt="...">
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Avengers</h5>
+          <p class="card-text">Marvel's Avengers 3d premiere the start of an epic saga with your best superheroes</p>
+          <p><span>Price</span> $250</p>
+          <a href="#" class="btn btn-primary">Buy</a>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center flex-wrap" id="CheckBody">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          Default checkbox
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          Default checkbox
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          Default checkbox
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          Default checkbox
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+        <label class="form-check-label" for="flexCheckDefault">
+          Default checkbox
+        </label>
+      </div> -->
+    </div>
+  </main>
+
+  <footer>
+    <div class="d-flex bg-danger bg-opacity-25 p-4 justify-content-between" id="Footer">
+      <div class="d-flex justify-content-start gap-3 SecondDiv">
+        <div class="bg-secondary  rounded"><img src="./assets/img/facebook-square-logo-36.ico"><a href="#"></a>
+        </div>
+        <div class="bg-secondary  rounded"><img src="./assets/img/instagram-logo-36.ico"><a href="#"></a></div>
+        <div class="bg-secondary  rounded"><img src="./assets/img/whatsapp-logo-36.ico"><a href="#"></a></div>
+      </div>
+
+      <h6 class="mb-0">COHORT 35/36 MINDHUB MERN</h6>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+
+  <script src="./js/data.js"></script>
+  <script src="./js/future.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

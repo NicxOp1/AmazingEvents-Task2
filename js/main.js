@@ -15,9 +15,9 @@ container.innerHTML= " " //aca se borra todo el contenedor asi esta la hoja en b
     <h5 class="card-title">${e.name}</h5>
     <p class="card-text">${e.description}</p>
     <p><span>Price</span> $ ${e.price}</p>
-    <a href="#" class="btn btn-primary">Buy</a>
+    <a href="./details.html?events=${e._id}" class="btn btn-primary">See more details</a>
   </div>
-    `//carga los elementos con sus respectivas variables al div 
+    `//carga los elementos con sus respectivas variables al div  // en la linea 18 el href nos hace dirigir a la pagina correspondiente al id que conlleva para ver los detalles
     container.appendChild(card)//inserta el div dentro del contenedor 
   })}
 imprimir(data.events)//carga todas las tarjetas 

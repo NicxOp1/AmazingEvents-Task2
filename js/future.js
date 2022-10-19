@@ -15,7 +15,7 @@ containerFuture.innerHTML= " " //aca se borra todo el contenedor asi esta la hoj
     <h5 class="card-title">${e.name}</h5>
     <p class="card-text">${e.description}</p>
     <p><span>Price</span> $ ${e.price}</p>
-    <a href="#" class="btn btn-primary">Buy</a>
+    <a href="./details.html?events=${e._id}" class="btn btn-primary">See more details</a>
   </div>
     `//carga los elementos con sus respectivas variables al div 
     containerFuture.appendChild(cardFuture)//inserta el div dentro del contenedor 

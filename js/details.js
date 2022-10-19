@@ -1,8 +1,5 @@
 let dato = data.events 
 let contenedorD = document.getElementById("DetailsM")
-let filterAssistance = dato.filter(e=>e.assistance) // creamos variable filterA.. para filtrar los eventos con assistencia nomas 
-console.log(filterAssistance)
-let filterEstimate = dato.filter(e=>e.estimate)//idem al anterior pero con estimados 
 
 function cardsAssistance (datos,contenedor){//creamos funcion para imprimir datos de asistance 
     let div = document.createElement("div")
@@ -47,9 +44,6 @@ function cardsEstimate (datos,contenedor){//creamos funcion para los datos que s
     contenedor.appendChild(div)
 }   
 function cardCharge(){//creamos funcion para enlazar los eventos del location search con el id respectivo 
-        console.log(location) 
-        console.log(location.search)
-        console.log(location.search.slice(8))
         let id = Number(location.search.slice(8))
         let evento = dato.filter(evento => evento._id === id); //comparamos los id extraidos vs los id de eventos genericos
         evento = evento[0] // inicializar el arreglo , el primer valor dentro de los filtrados

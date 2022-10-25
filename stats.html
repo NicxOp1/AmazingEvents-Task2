@@ -34,9 +34,6 @@
       <li class="nav-item border border-dark d-flex aling-items-center p-1 my-3 bg-warning shadow rounded">
         <a class="nav-link text-danger" href="#">Stats</a>
       </li>
-      <li class="nav-item border border-dark d-flex aling-items-center p-1 my-3 bg-warning shadow rounded">
-        <a class="nav-link text-danger" href="./details.html">Details</a>
-      </li>
     </ul>
 
 
@@ -86,17 +83,13 @@
           <th colspan="3" class="table-dark">Events Estadistics</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="tbody">
         <tr>
           <td>Events with the highest percentage of attendance </td>
           <td> Events with the lowest percentage of attendance </td>
           <td>Event with larger capacity</td>
         </tr>
-        <tr>
-          <td>                 </td>
-          <td>                 </td>
-          <td>                 </td>
-        </tr>
+
       </tbody>
     </table>
     <table class="table table-bordered">
@@ -105,26 +98,11 @@
           <th colspan="3" class="table-dark">Upcoming Events Stadistics by category</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="tbody2">
         <tr>
           <td>Categories</td>
           <td>Revenues</td>
           <td>Percentage of attendance</td>
-        </tr>
-        <tr>
-          <td>                 </td>
-          <td>                 </td>
-          <td>                 </td>
-        </tr>
-        <tr>
-          <td>                 </td>
-          <td>                 </td>
-          <td>                 </td>
-        </tr>
-        <tr>
-          <td>                 </td>
-          <td>                 </td>
-          <td>                 </td>
         </tr>
       </tbody>
     </table>
@@ -134,44 +112,20 @@
           <th colspan="3" class="table-dark">Past Events Stadistics by category</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="tbody3">
         <tr>
           <td>Categories</td>
           <td>Revenues</td>
           <td>Percentage of attendance</td>
         </tr>
-        <tr>
-          <td>                 </td>
-          <td>                 </td>
-          <td>                 </td>
-        </tr>
-        <tr>
-          <td>                 </td>
-          <td>                 </td>
-          <td>                 </td>
-        </tr>
-        <tr>
-          <td>                 </td>
-          <td>                 </td>
-          <td>                 </td>
-        </tr>
-        <tr>
-          <td>                 </td>
-          <td>                 </td>
-          <td>                 </td>
-        </tr>
-        <tr>
-          <td>                 </td>
-          <td>                 </td>
-          <td>                 </td>
-        </tr>
+        
         
       </tbody>
     </table>
   </div>
   </main>
 
-  <footer>
+  <footer class="bajar">
     <div class="d-flex bg-danger bg-opacity-25 p-4 justify-content-between" id="Footer">
       <div class="d-flex justify-content-start gap-3 SecondDiv">
         <div class="bg-secondary  rounded"><img src="./assets/img/facebook-square-logo-36.ico"><a href="#"></a>
@@ -190,8 +144,8 @@
 
 
 
-
-
+<script src="./js/data.js"></script>
+  <script src="./js/stats.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
     crossorigin="anonymous"></script>

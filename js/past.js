@@ -4,7 +4,7 @@ let $inputSearch = document.getElementById("inputSearchPast")
 
 async function fetchApi(){
   try{
-    let data = await fetch('https://mh-amazing.herokuapp.com/amazing')
+    let data = await fetch('https://mh-amazing.herokuapp.com/amazing?time=past')
     evento = await data.json()
     console.log(evento)
     evento = evento.events

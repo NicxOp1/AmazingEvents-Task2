@@ -1,3 +1,10 @@
+.altura{
+    height: 700px;
+    
+}
+.bajar{
+    margin-top: 430px;
+}
 .card-img-top{
     height:275px ;
     width: 445px ;
@@ -94,9 +101,12 @@
         margin-top: 5rem;
         margin-bottom: -3rem;
     }
+    .bajar{
+        margin-top: 500px ;
+    }
 }
 @media (min-width: 950px) {
-
+   
     #CheckBody{
         display: none !important;
     }    
@@ -113,7 +123,16 @@
     .SizeP{
         flex-direction: row;
     }
+    .bajar{
+        margin-top: 500px ;
+    }
+    
 }
+@media (max-width: 769px) {
+    .bajar{
+        margin-top: 600px;
+
+    }}
     @media (max-width: 600px) {
         .Sizing{
             margin-top: 5rem;
@@ -140,6 +159,9 @@
     #CardContainer{
         padding: 0;
     }
+    .bajar{
+        margin-top: 650px;
+    }
 }
 @media (max-width: 465px ){
     #CardContainer{
@@ -153,5 +175,10 @@
     }
     #butFour{
         justify-content: center !important;
+    }
+}
+@media (max-width: 325px ){
+    .bajar{
+       margin-top:  700px;
     }
 }

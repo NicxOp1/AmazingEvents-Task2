@@ -1,71 +1,67 @@
-let containerPast = document.getElementById("CardContainer")
-let eventosPasados = data.events.filter((e)=>e.date<data.currentDate)
+let $containerPast = document.getElementById("CardContainer")
+let $padreCheck = document.getElementById("javaScript-CheckPast")
+let $inputSearch = document.getElementById("inputSearchPast")
 
-function imprimir (array){
-containerPast.innerHTML= " " //aca se borra todo el contenedor asi esta la hoja en blanco para porder cargar los datos nuevos(filtrados)
-  array.forEach((e)=>{//recorre el arreglo
-    let cardPast = document.createElement("div")//crea un div
-    cardPast.className = "card"//le da una clase al div 
-    cardPast.style = "width: 17rem; height: auto;"//le da un estilo al div 
-    cardPast.innerHTML = `
-    <div class="inner">
-    <img src="${e.image}" class="card-img-top" alt="${e.name}">
-  </div>
-  <div class="card-body">
-    <h5 class="card-title">${e.name}</h5>
-    <p class="card-text">${e.description}</p>
-    <p><span>Price</span> $ ${e.price}</p>
-    <a href="./details.html?events=${e._id}" class="btn btn-primary">See more details</a>
-  </div>
-    `//carga los elementos con sus respectivas variables al div 
-    containerPast.appendChild(cardPast)//inserta el div dentro del contenedor 
-  })}
-imprimir(eventosPasados)//carga todas las tarjetas
-
-
-
-
-
-
-let categorias = new Set(eventosPasados.map((cate)=>cate.category))//entra dentro de el objeto de eventos , recorre las categorias y evita repeticiones con new set
-console.log(categorias)
-let padreCheck = document.getElementById("javaScript-CheckPast")// busca el contenedor de checkboxes
-categorias.forEach(element => {//itera sobre las categorias extraidas
-  padreCheck.innerHTML +=//inserta dentro del contenedor de checkbox respectivas con sus valores correspondientes que fueron iterados sobre las categorias
-  `
-  <div class="d-flex p-2">
-        <input class="form-check-input p-2 " type="checkbox" value="${element}" id="firstCheckbox">
-        <label class="form-check-label" for="firstCheckbox">${element}</label>
-      </div>
-  `
-});
-function condicion (array){// en esta linea crea una funcion que recorrera el array de eventos 
-  let varia = document.querySelectorAll('input[type="checkbox"]')//extrae todos los input (checkbox)
-  let a = Array.from(varia).filter(item=>item.checked).map((e)=>e.value)//convierte los inputs en arreglos , para asi filtrarlos por estado y
-  //luego recorrerlos con .map a los valores del checkbox
-  if(a.length>0){//condicionamos a que si existe algun valor de checkbox realice la siguiente operacion
-    let b= array.filter(e=>a.includes(e.category)) // creo una variable la cual filtra al array de eventos y pregunta si a ( que serian los value de checkbox ) incluye alguna categoria de data[events.category]
-    return b //devuelve la operacion que fue cargada en la variable 
+async function fetchApi(){
+  try{
+    let data = await fetch('https://mh-amazing.herokuapp.com/amazing')
+    evento = await data.json()
+    console.log(evento)
+    evento = evento.events
+    console.log(evento)
+    /* CHECKBOX*/
+    crearCheckbox(evento,$padreCheck)
+    imprimirCards(evento, $containerPast)
+    $inputSearch.addEventListener( 'keyup', filtrar )
+    $padreCheck.addEventListener( 'change', filtrar )
+  }catch(err){
+    console.log("no se puede mostrar el contenido debido a un error")
   }
 }
- padreCheck.addEventListener("change",e=>{//creamos evento( parado sobre el contenedor de checkboxes) que cambie
-  let fC= filtrado(eventosPasados,inputSearch.value) //carga en una variable la funcion filtrado que recibe el array y el texto a comparar para cargar las tarjetas 
-  imprimir(condicion(fC))//imprime las cards , si es que los valores cargados en fc se trabajan sobre la funcion condicion
- })
-
-
-
-
-
-let formulario = document.getElementById("searchFormPast") //buscamos a traves del boton
-let inputSearch = document.getElementById("inputSearchPast")//buscamos al input de search
-
-formulario.addEventListener("click",(e)=>{//creamos evento que dice que cuando clickeemos el boton search, henere esta funcion
-  let bar = filtrado(eventosPasados,inputSearch.value) // carga en var el filtrado entre data.events e inputSearch.value
-  imprimir(bar)//imprime los resultados de la funcion filtrado
-})
-function filtrado(array,texto){//creamos una funcion que va a filtrar entre los datos de un arreglo y el texto ingresado en el input de search
-  let variable = array.filter((e)=>e.name.toLowerCase().includes(texto.toLowerCase()))
-  //en la linea 63 se hace un filter al array ingresado, y busca el nombre del array , lo convierte en minuscula , y pregunta : si ese valor incluye (el texto ingresado pasado a minuscula )
-  return variable//devuelve su valor 
+fetchApi()
+/* FUNCIONESSSSSSS */
+function crearCheckbox( array , contenedor ){
+  let f = array => array.category
+    let categorias = new Set(array.filter(f).map(f))
+  categorias.forEach( cate => {
+      contenedor.innerHTML += `
+          <label class="btn active">
+              <input type="checkbox" class="me-2" value="${cate}" name="" id="" checked autocomplete="off"> ${cate}
+          </label>
+      `
+  })
+}
+function imprimir (array){
+      let card = document.createElement("div")//crea un div
+      card.className = "card"//le da una clase al div 
+      card.style = "width: 17rem; height: auto;"//le da un estilo al div 
+      card.innerHTML = `
+      <div class="inner">
+      <img src="${array.image}" class="card-img-top" alt="${array.name}">
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">${array.name}</h5>
+      <p class="card-text">${array.description}</p>
+      <p><span>Price</span> $ ${array.price}</p>
+      <a href="./details.html?events=${array.id}" class="btn btn-primary">See more details</a>
+    </div>
+      `
+    return card
+    }
+  
+    function filtrar(){
+      let checked = [...document.querySelectorAll('input[type="checkbox"]:checked')].map( ele => ele.value)
+      let filtradosPorCategory = evento.filter( e => checked.includes( e.category ) || checked.length === 0)
+      let filtradosPorSearch = filtradosPorCategory.filter( e => e.name.toLowerCase().includes( $inputSearch.value.toLowerCase() ) )
+      imprimirCards(filtradosPorSearch, $containerPast)
+   }
+   function imprimirCards( array, contenedor){
+    contenedor.innerHTML = ''
+    if(array.length > 0) {
+        let fragment = document.createDocumentFragment()
+        array.forEach( array => fragment.appendChild( imprimir(array)))
+        contenedor.appendChild(fragment)
+    }else{
+        contenedor.innerHTML = '<h2 class="altura"> No existen eventos que coincidan con su busqueda </h2>'
+    }
 }
